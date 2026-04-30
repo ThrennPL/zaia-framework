@@ -2,6 +2,20 @@
 
 All notable changes to ZAIA orchestration assets are documented in this file.
 
+## 1.5.0 - 2026-04-30
+### Metadata
+- author: environment owner
+- rationale: define Phase F hardening controls for execution, integration tests, and production readiness
+- regression-test-reference: .github/tests/agent-contract-tests.md and .github/tests/project-artifact-quality-tests.md
+
+### Added
+- .github/automation/execution-profiles.md
+- .github/automation/integration-test-plan.md
+- .github/automation/production-readiness-checklist.md
+
+### Updated
+- README.md with Phase F hardening visibility.
+
 ## 1.4.0 - 2026-04-30
 ### Metadata
 - author: environment owner

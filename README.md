@@ -46,6 +46,7 @@ This repository is not an application runtime. It is a configuration and governa
 
 - .github/automation/
   Phase F operational workflows for artifact generation, gate validation, and diagnostics reporting.
+  Includes hardening assets: execution profiles, integration test plan, and production readiness checklist.
 
 - .github/quality-gates/
   Stage checklists from readiness to release auditability.
@@ -114,7 +115,7 @@ Implemented baseline:
 - Phase F: automation workflow definitions for artifact generation, quality-gate validation, and diagnostics reporting.
 
 Planned next:
-- Phase F implementation hardening: executable automation pipelines and integration tests.
+- Phase F implementation hardening: execute integration tests and production readiness sign-off.
 
 ## Notes
 - Some local planning files may remain intentionally untracked for private workflow use.
