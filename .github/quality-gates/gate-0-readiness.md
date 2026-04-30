@@ -12,12 +12,16 @@ Confirm the task is ready to enter discovery and structured analysis.
 4. Initial source set identified.
 5. Scope statement present (in-scope and out-of-scope).
 6. Required subagents identified at high level.
+7. Project onboarding readiness completed (complete or partial, not blocked).
+8. Placeholder verification runbook executed with no unresolved critical placeholders.
 
 ## Evidence Required
 - task header block
 - ownership list
 - data classification note
 - source inventory snapshot
+- project-onboarding-readiness checklist output
+- placeholder verification result and coverage matrix report
 
 ## Decision Rules
 - pass: all mandatory checks complete.
@@ -28,3 +32,5 @@ Confirm the task is ready to enter discovery and structured analysis.
 - no accountable owner
 - no data classification
 - no task identity
+- onboarding readiness status is blocked
+- unresolved critical placeholders in required assets

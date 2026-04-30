@@ -23,7 +23,11 @@ Use this prompt at project onboarding, before first production analytical cycle,
 - artifact templates
 - final-output templates
 
-4. Produce a configuration summary with unresolved placeholders and required owner decisions.
+4. Execute placeholder verification runbook and evaluate coverage matrix:
+- .github/placeholders/placeholder-verification-runbook.md
+- .github/placeholders/placeholder-coverage-matrix.md
+
+5. Produce a configuration summary with unresolved placeholders and required owner decisions.
 
 ## Required Output
 - configuration status: complete | partial | blocked
@@ -31,6 +35,7 @@ Use this prompt at project onboarding, before first production analytical cycle,
 - unresolved placeholder list with blocking/non-blocking priority
 - impacted file list
 - recommended next actions
+- verification evidence references (runbook + coverage matrix)
 
 ## Constraints
 - Keep orchestrator-only MCP and user-contact boundaries intact.

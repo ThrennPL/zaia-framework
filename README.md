@@ -32,6 +32,7 @@ This repository is not an application runtime. It is a configuration and governa
 
 - .github/placeholders/
   Placeholder catalog for project-specific ZAIA adaptation.
+  Includes verification runbook, coverage matrix, and example configuration.
 
 - .github/tests/
   Contract-test and project-artifact quality-test specifications plus fixtures.
@@ -45,6 +46,7 @@ This repository is not an application runtime. It is a configuration and governa
 
 - .github/quality-gates/
   Stage checklists from readiness to release auditability.
+  Includes project onboarding readiness checklist used with Gate 0.
 
 - .github/artifacts/templates/
   Mandatory project artifact templates.
@@ -105,11 +107,10 @@ Implemented baseline:
 - Phase C: artifact standardization.
 - Phase D: final-output template system.
 - Phase E (MVP): MCP read-only baseline and OCR pilot definition.
-- Phase G (MVP): project-configuration prompt and placeholder catalog.
+- Phase G (full): project-configuration prompt, placeholder catalog, verification runbook, coverage matrix, and onboarding readiness integration.
 
 Planned next:
 - Phase F: automation and operational tooling.
-- Phase G (full): placeholder verification flow and coverage matrix completion.
 
 ## Notes
 - Some local planning files may remain intentionally untracked for private workflow use.
