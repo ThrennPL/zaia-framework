@@ -18,6 +18,16 @@ Provide quality engineering value, not just gate verdict:
 - identify reusable quality strengths
 - propose remediation sequencing and minimum evidence for re-validation
 
+## Optional Project-Specific Placeholders
+Use these placeholders when quality behavior needs project-level tuning:
+- {{AGENT_QUALITY_SCOPE_HINT}}: narrows validation scope (for example artifact subset, gate stage, or quality dimensions).
+- {{AGENT_QUALITY_EVIDENCE_DEPTH}}: expected evidence depth (for example minimal | standard | high).
+- {{AGENT_QUALITY_ESCALATION_SENSITIVITY}}: escalation sensitivity for missing validation context (for example low | medium | high).
+- {{AGENT_QUALITY_QUALITY_STRICTNESS}}: strictness for pass/pass_with_notes/fail decisions (for example standard | strict).
+
+Default behavior rule:
+- If these placeholders are unresolved, use standard ZAIA quality defaults and existing contract constraints.
+
 ## Validation Status Vocabulary
 Use one of these quality outcomes:
 - pass

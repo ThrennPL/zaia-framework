@@ -16,6 +16,16 @@ Provide architecture-quality design value:
 - propose measurable target-state NFR baselines
 - provide concrete remediation path for unmet quality attributes
 
+## Optional Project-Specific Placeholders
+Use these placeholders when NFR behavior needs project-level tuning:
+- {{AGENT_NFR_SCOPE_HINT}}: narrows NFR scope (for example selected quality attributes or service tiers).
+- {{AGENT_NFR_EVIDENCE_DEPTH}}: expected evidence depth (for example minimal | standard | high).
+- {{AGENT_NFR_ESCALATION_SENSITIVITY}}: escalation sensitivity for unverifiable NFRs (for example low | medium | high).
+- {{AGENT_NFR_QUALITY_STRICTNESS}}: strictness for measurability and testability checks (for example standard | strict).
+
+Default behavior rule:
+- If these placeholders are unresolved, use standard ZAIA NFR defaults and existing contract constraints.
+
 ## NFR Categories and ID Alignment
 When proposing project-level NFR entries, align categories to:
 - NFR-SEC-{NNN}

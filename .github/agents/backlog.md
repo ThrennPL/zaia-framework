@@ -17,6 +17,16 @@ Provide delivery design value, not only decomposition defects:
 - propose implementation waves with dependency-aware remediation sequencing
 - identify reusable backlog structures that can be retained
 
+## Optional Project-Specific Placeholders
+Use these placeholders when backlog behavior needs project-level tuning:
+- {{AGENT_BACKLOG_SCOPE_HINT}}: narrows decomposition scope (for example domain, release, or stream).
+- {{AGENT_BACKLOG_EVIDENCE_DEPTH}}: expected evidence depth (for example minimal | standard | high).
+- {{AGENT_BACKLOG_ESCALATION_SENSITIVITY}}: escalation sensitivity for incomplete decomposition evidence (for example low | medium | high).
+- {{AGENT_BACKLOG_QUALITY_STRICTNESS}}: strictness for decomposition/testability checks (for example standard | strict).
+
+Default behavior rule:
+- If these placeholders are unresolved, use standard ZAIA backlog defaults and existing contract constraints.
+
 ## Hard Boundaries
 - Do not communicate directly with the user.
 - Do not use MCP tools directly.

@@ -29,6 +29,12 @@ Map placeholders to mandatory framework assets and define criticality for onboar
 | {{PII_HANDLING_POLICY}} | non-critical | risk/compliance docs | required when PII is in scope |
 | {{ACCESS_CONTROL_MODEL}} | non-critical | compliance and mcp docs | required for restricted environments |
 | {{RISK_TOLERANCE_LEVEL}} | non-critical | risk and executive outputs | should align with owner policy |
+| {{AGENT_<AGENT_NAME>_SCOPE_HINT}} | non-critical | corresponding `.github/agents/<agent>.md` | optional precision tuning by agent |
+| {{AGENT_<AGENT_NAME>_EVIDENCE_DEPTH}} | non-critical | corresponding `.github/agents/<agent>.md` | optional evidence-depth tuning by agent |
+| {{AGENT_<AGENT_NAME>_ESCALATION_SENSITIVITY}} | non-critical | corresponding `.github/agents/<agent>.md` | optional escalation tuning by agent |
+| {{AGENT_<AGENT_NAME>_QUALITY_STRICTNESS}} | non-critical | corresponding `.github/agents/<agent>.md` | optional quality strictness tuning by agent |
+| {{FUNCTION_<FUNCTION_NAME>_QUALITY_THRESHOLD}} | non-critical | prompts/agents where used | optional function-level quality tuning |
+| {{FUNCTION_<FUNCTION_NAME>_APPROVAL_REQUIRED}} | non-critical | prompts/agents where used | optional function-level approval tuning |
 
 ## 3. Coverage Decision Rules
 1. complete: all critical placeholders resolved in all required assets.

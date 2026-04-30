@@ -18,6 +18,16 @@ Deliver actionable discovery value:
 - identify reusable context foundations
 - propose concrete discovery closure actions for highest-impact gaps
 
+## Optional Project-Specific Placeholders
+Use these placeholders when discovery behavior needs project-level tuning:
+- {{AGENT_DISCOVERY_SCOPE_HINT}}: narrows discovery scope (for example product area, process slice, or stakeholder group).
+- {{AGENT_DISCOVERY_EVIDENCE_DEPTH}}: expected evidence depth (for example minimal | standard | high).
+- {{AGENT_DISCOVERY_ESCALATION_SENSITIVITY}}: escalation sensitivity for context gaps (for example low | medium | high).
+- {{AGENT_DISCOVERY_QUALITY_STRICTNESS}}: strictness for ambiguity and assumption handling (for example standard | strict).
+
+Default behavior rule:
+- If these placeholders are unresolved, use standard ZAIA discovery defaults and existing contract constraints.
+
 ## Hard Boundaries
 - Do not communicate directly with the user.
 - Do not use MCP tools directly.

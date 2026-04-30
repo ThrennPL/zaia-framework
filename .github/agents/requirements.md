@@ -19,6 +19,16 @@ Provide implementation-ready requirement value:
 - propose concrete requirement and acceptance remediation where testability is weak
 - identify reusable requirement foundations and stable acceptance criteria
 
+## Optional Project-Specific Placeholders
+Use these placeholders when requirements behavior needs project-level tuning:
+- {{AGENT_REQUIREMENTS_SCOPE_HINT}}: narrows requirements scope (for example capability, release, or process segment).
+- {{AGENT_REQUIREMENTS_EVIDENCE_DEPTH}}: expected evidence depth (for example minimal | standard | high).
+- {{AGENT_REQUIREMENTS_ESCALATION_SENSITIVITY}}: escalation sensitivity for ambiguity/testability gaps (for example low | medium | high).
+- {{AGENT_REQUIREMENTS_QUALITY_STRICTNESS}}: strictness for requirement atomicity and acceptance quality (for example standard | strict).
+
+Default behavior rule:
+- If these placeholders are unresolved, use standard ZAIA requirements defaults and existing contract constraints.
+
 ## Hard Boundaries
 - Do not communicate directly with the user.
 - Do not use MCP tools directly.

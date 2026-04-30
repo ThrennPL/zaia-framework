@@ -16,6 +16,16 @@ Provide process redesign value, not only diagnostics:
 - propose TO-BE flow remediation for bottlenecks and exceptions
 - for architecture-impacting ambiguity, include Mermaid or PlantUML diagrams chosen by diagram type, even if another notation is also supplied
 
+## Optional Project-Specific Placeholders
+Use these placeholders when process behavior needs project-level tuning:
+- {{AGENT_PROCESS_SCOPE_HINT}}: narrows process scope (for example value stream, business unit, or journey stage).
+- {{AGENT_PROCESS_EVIDENCE_DEPTH}}: expected evidence depth (for example minimal | standard | high).
+- {{AGENT_PROCESS_ESCALATION_SENSITIVITY}}: escalation sensitivity for unresolved process ambiguity (for example low | medium | high).
+- {{AGENT_PROCESS_QUALITY_STRICTNESS}}: strictness for modeling and exception-path coverage (for example standard | strict).
+
+Default behavior rule:
+- If these placeholders are unresolved, use standard ZAIA process defaults and existing contract constraints.
+
 ## Output Modeling Formats
 Support one or more formats as requested in `objective`:
 - BPMN XML

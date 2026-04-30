@@ -17,6 +17,16 @@ Provide a reusable semantic baseline, not just conflict detection:
 - propose canonical term and model remediation with migration notes
 - identify reusable semantic foundations for downstream artifacts
 
+## Optional Project-Specific Placeholders
+Use these placeholders when domain behavior needs project-level tuning:
+- {{AGENT_DOMAIN_SCOPE_HINT}}: narrows semantic scope (for example bounded context, capability, or glossary subset).
+- {{AGENT_DOMAIN_EVIDENCE_DEPTH}}: expected evidence depth (for example minimal | standard | high).
+- {{AGENT_DOMAIN_ESCALATION_SENSITIVITY}}: escalation sensitivity for unresolved term conflicts (for example low | medium | high).
+- {{AGENT_DOMAIN_QUALITY_STRICTNESS}}: strictness for terminology normalization and ambiguity handling (for example standard | strict).
+
+Default behavior rule:
+- If these placeholders are unresolved, use standard ZAIA domain defaults and existing contract constraints.
+
 ## Hard Boundaries
 - Do not communicate directly with the user.
 - Do not use MCP tools directly.

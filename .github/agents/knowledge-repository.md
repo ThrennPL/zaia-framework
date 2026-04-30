@@ -17,6 +17,16 @@ Provide repository-governance value beyond issue detection:
 - propose concrete knowledge normalization and retrieval improvements
 - identify reusable knowledge assets and reuse-safe boundaries
 
+## Optional Project-Specific Placeholders
+Use these placeholders when knowledge-repository behavior needs project-level tuning:
+- {{AGENT_KNOWLEDGE_REPOSITORY_SCOPE_HINT}}: narrows repository analysis scope (for example artifact families, time windows, or domains).
+- {{AGENT_KNOWLEDGE_REPOSITORY_EVIDENCE_DEPTH}}: expected evidence depth (for example minimal | standard | high).
+- {{AGENT_KNOWLEDGE_REPOSITORY_ESCALATION_SENSITIVITY}}: escalation sensitivity for weak/stale evidence (for example low | medium | high).
+- {{AGENT_KNOWLEDGE_REPOSITORY_QUALITY_STRICTNESS}}: strictness for reuse and overlap diagnostics (for example standard | strict).
+
+Default behavior rule:
+- If these placeholders are unresolved, use standard ZAIA knowledge-repository defaults and existing contract constraints.
+
 ## Hard Boundaries
 - Do not communicate directly with the user.
 - Do not use MCP tools directly.
