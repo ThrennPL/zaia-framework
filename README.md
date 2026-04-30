@@ -44,6 +44,9 @@ This repository is not an application runtime. It is a configuration and governa
   Phase E MCP read-only baseline, governance controls, and OCR pilot definition.
   Includes server-set recommendation and Cloud/DC decision guidance.
 
+- .github/automation/
+  Phase F operational workflows for artifact generation, gate validation, and diagnostics reporting.
+
 - .github/quality-gates/
   Stage checklists from readiness to release auditability.
   Includes project onboarding readiness checklist used with Gate 0.
@@ -108,9 +111,10 @@ Implemented baseline:
 - Phase D: final-output template system.
 - Phase E (MVP): MCP read-only baseline and OCR pilot definition.
 - Phase G (full): project-configuration prompt, placeholder catalog, verification runbook, coverage matrix, and onboarding readiness integration.
+- Phase F: automation workflow definitions for artifact generation, quality-gate validation, and diagnostics reporting.
 
 Planned next:
-- Phase F: automation and operational tooling.
+- Phase F implementation hardening: executable automation pipelines and integration tests.
 
 ## Notes
 - Some local planning files may remain intentionally untracked for private workflow use.

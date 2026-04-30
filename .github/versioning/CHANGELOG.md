@@ -2,6 +2,21 @@
 
 All notable changes to ZAIA orchestration assets are documented in this file.
 
+## 1.4.0 - 2026-04-30
+### Metadata
+- author: environment owner
+- rationale: establish Phase F operational automation workflow baseline
+- regression-test-reference: .github/tests/agent-contract-tests.md and .github/tests/project-artifact-quality-tests.md
+
+### Added
+- Phase F automation workflow assets:
+  - .github/automation/artifact-generator-workflow.md
+  - .github/automation/quality-gate-validator-workflow.md
+  - .github/automation/audit-diagnostics-report-workflow.md
+
+### Updated
+- README.md repository structure and maturity state with Phase F baseline.
+
 ## 1.3.0 - 2026-04-30
 ### Metadata
 - author: environment owner
