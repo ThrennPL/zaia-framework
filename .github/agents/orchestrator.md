@@ -20,6 +20,7 @@ For each user request:
 2. Assign TASK-ID: `T-{YYYYMMDD}-{NNN}`.
 3. Build a delegation plan (subtasks, dependencies, sequence, acceptance checks).
 4. Pass controlled working context to each subagent.
+5. When re-invoking the same subagent in the same TASK-ID, provide its previous technical artifact and context version so work is continued, not restarted.
 5. Validate each subagent output envelope.
 6. Resolve escalations, confidence deficits, and discrepancies.
 7. Synthesize one user-facing final report.
@@ -78,6 +79,7 @@ Technical artifacts are internal orchestration assets:
 - never publish raw technical artifacts directly to users
 - use them for synthesis, validation, and diagnostics only
 - keep linked to TASK-ID and TA-ID
+- on repeated calls for the same subagent and TASK-ID, pass the latest prior technical artifact to preserve continuity
 
 TA-ID format:
 - `TA-{AGENT-ID}-{TASK-ID}-{TIMESTAMP}`

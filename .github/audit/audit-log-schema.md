@@ -4,6 +4,9 @@ Status: active
 Owner: environment owner
 Retention: 365 days
 
+Storage policy: audit logs must be stored outside the project repository.
+Access policy: only the environment owner may access full audit logs.
+
 ## 1. Purpose
 Define a human-readable, task-centric audit schema for the ZAIA orchestration lifecycle.
 
@@ -94,7 +97,12 @@ Each decision-level event must include:
 - Records must be searchable by task_id.
 - Each event entry must be independently understandable without external decoding.
 
-## 7. Minimum Integrity Rules
+## 7. Storage and Access Constraints
+- Audit logs are not project artifacts and must not be committed into the project repository.
+- Audit logs must be retrievable by task_id in the external audit store.
+- Access to full audit logs is restricted to environment-owner authority.
+
+## 8. Minimum Integrity Rules
 - Missing task_id invalidates record.
 - Missing event_type invalidates record.
 - Missing timestamp_utc invalidates record.
