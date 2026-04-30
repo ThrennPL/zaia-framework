@@ -2,6 +2,25 @@
 
 All notable changes to ZAIA orchestration assets are documented in this file.
 
+## 1.3.0 - 2026-04-30
+### Metadata
+- author: environment owner
+- rationale: deliver Phase E MVP retrieval controls and Phase G MVP adaptation assets
+- regression-test-reference: .github/tests/agent-contract-tests.md and .github/tests/project-artifact-quality-tests.md
+
+### Added
+- Phase E MVP MCP assets:
+  - .github/mcp/read-only-integration-baseline.md
+  - .github/mcp/governance-controls.md
+  - .github/mcp/ocr-pilot.md
+
+- Phase G MVP adaptation assets:
+  - .github/prompts/project-configuration.prompt.md
+  - .github/placeholders/placeholder-catalog.md
+
+### Updated
+- README.md with MCP and maturity-state updates.
+
 ## 1.2.0 - 2026-04-30
 ### Metadata
 - author: environment owner
