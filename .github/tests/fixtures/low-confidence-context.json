@@ -1,0 +1,26 @@
+{
+  "task_id": "T-20260430-003",
+  "objective": "Analyze context with intentionally weak source coverage.",
+  "working_context": {
+    "summary": "Conflicting and stale sources to force low confidence behavior.",
+    "sources": [
+      {
+        "id": "SRC-OLD-001",
+        "freshness": "critical_stale",
+        "type": "document"
+      },
+      {
+        "id": "SRC-CONFLICT-002",
+        "freshness": "stale",
+        "type": "note"
+      }
+    ],
+    "conflicts_present": true
+  },
+  "permissions_scope": {
+    "allowed_tools": [],
+    "allowed_actions": ["analyze", "escalate"]
+  },
+  "data_classification": "internal",
+  "required_confidence_threshold": 0.8
+}

@@ -1,0 +1,8 @@
+{
+  "task_id": "T-20260430-002",
+  "objective": "Analyze requirements context with incomplete envelope.",
+  "working_context": {
+    "summary": "Synthetic incomplete envelope fixture."
+  },
+  "data_classification": "internal"
+}

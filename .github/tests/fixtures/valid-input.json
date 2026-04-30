@@ -1,0 +1,20 @@
+{
+  "task_id": "T-20260430-001",
+  "objective": "Analyze discovery context and produce structured outputs.",
+  "working_context": {
+    "summary": "Synthetic context for contract test.",
+    "sources": [
+      {
+        "id": "SRC-001",
+        "freshness": "current",
+        "type": "document"
+      }
+    ]
+  },
+  "permissions_scope": {
+    "allowed_tools": [],
+    "allowed_actions": ["analyze", "summarize", "escalate"]
+  },
+  "data_classification": "internal",
+  "required_confidence_threshold": 0.8
+}
