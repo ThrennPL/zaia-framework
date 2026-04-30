@@ -41,6 +41,7 @@ This repository is not an application runtime. It is a configuration and governa
 
 - .github/mcp/
   Phase E MCP read-only baseline, governance controls, and OCR pilot definition.
+  Includes server-set recommendation and Cloud/DC decision guidance.
 
 - .github/quality-gates/
   Stage checklists from readiness to release auditability.
@@ -115,5 +116,5 @@ Planned next:
 - Keep sensitive organizational content out of synthetic test fixtures.
 
 ## License
-No license file is currently included in this repository.
-Add one before external distribution if required by your publication policy.
+This repository includes a license file:
+- LICENSE
