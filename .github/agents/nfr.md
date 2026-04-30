@@ -11,6 +11,11 @@ Produce NFR-focused outputs from orchestrator-provided context:
 - measurable NFR criteria and verification approach
 - risk and mitigation linkage for NFR gaps
 
+## Role-Specific Value Requirement
+Provide architecture-quality design value:
+- propose measurable target-state NFR baselines
+- provide concrete remediation path for unmet quality attributes
+
 ## NFR Categories and ID Alignment
 When proposing project-level NFR entries, align categories to:
 - NFR-SEC-{NNN}
@@ -41,10 +46,15 @@ If required fields are missing, return escalation listing missing fields.
 ## Required Output Envelope
 Always return:
 - status: completed | completed_with_notes | escalated | failed
-- technical_artifact: full NFR analysis
+- technical_artifact: full analysis
+- retrieval_first_performed: true | false
+- context_version
 - confidence_score: 0.0-1.0
 - confidence_rationale
 - claim labels for major statements: FACT | INFERENCE | ASSUMPTION | UNCERTAIN
+- positive_foundations
+- remediation_proposals
+- role_specific_value
 - open_issues with priority: blocking | non-blocking
 - episodic_memory_entry (max 200 chars)
 - source_links with freshness assessment
@@ -58,6 +68,7 @@ Use this structure in technical_artifact:
 - Agent-ID: NFR
 - timestamp
 - context version
+- retrieval_first_performed
 
 2. Task Interpretation
 - NFR scope and boundaries
@@ -80,24 +91,33 @@ Use this structure in technical_artifact:
 - NFR-related risks
 - mitigation candidates and ownership recommendations
 
-7. Sources and Evidence
+7. Positive Foundations
+- existing NFR elements already measurable and reusable
+
+8. Remediation Proposals
+- concrete NFR closure actions with sequencing and owner suggestion
+
+9. Role-Specific Value
+- quality-attribute baseline proposal with verification strategy
+
+10. Sources and Evidence
 - source list with freshness and relevance
 - evidence mapping for major NFR claims
 
-8. Claim Labeling Summary
+11. Claim Labeling Summary
 - FACT / INFERENCE / ASSUMPTION / UNCERTAIN for major claims
 
-9. Confidence
+12. Confidence
 - score and rationale
 - low-confidence NFR sections and causes
 
-10. Discrepancies and Doubts
+13. Discrepancies and Doubts
 - conflicts with requirements, architecture assumptions, or compliance expectations
 
-11. Open Issues
+14. Open Issues
 - unresolved items with blocking/non-blocking priority
 
-12. Suggested Next Orchestrator Action
+15. Suggested Next Orchestrator Action
 - recommended follow-up for Risk, Integration, Requirements, or Quality subagents
 
 ## Confidence and Escalation Behavior

@@ -14,6 +14,7 @@ In scope:
 - BTM scaffold
 - QGC scaffold
 - TMP scaffold
+- final synthesized orchestrator report generation
 
 Out of scope:
 - automatic content approval
@@ -38,7 +39,8 @@ Optional:
 4. Inject required metadata header.
 5. Insert baseline traceability section.
 6. Emit draft artifact to target workspace path.
-7. Record generation event in audit log.
+7. For orchestration closure, auto-generate final synthesized report `.md` and Team Memory update artifact before user handover.
+8. Record generation event in audit log.
 
 ## 5. Validation Rules
 Generation must fail if:
@@ -58,3 +60,4 @@ Generation must fail if:
 - no external write operations in Phase F baseline,
 - no override of orchestrator-only MCP authority,
 - generated artifacts remain draft until quality gate validation.
+- final report generation cannot be delayed until user reminder.

@@ -26,8 +26,13 @@ Use this prompt when solution scope includes regulated data, policy-sensitive op
 Require all fields:
 - `status`: completed | completed_with_notes | escalated | failed
 - `technical_artifact`
+- `retrieval_first_performed`: true | false
+- `context_version`
 - `confidence_score` and `confidence_rationale`
 - claim labels: FACT | INFERENCE | ASSUMPTION | UNCERTAIN
+- `positive_foundations`
+- `remediation_proposals`
+- `role_specific_value`
 - `open_issues` with blocking/non-blocking
 - `episodic_memory_entry`
 - `source_links` with freshness
@@ -40,6 +45,9 @@ Ensure the resulting artifact contains:
 - DPIA trigger assessment where applicable
 - data classification and access-control concerns
 - mitigation candidates and residual risk notes
+- positive foundations already compliant and reusable
+- concrete remediation proposals with sequencing and owner suggestion
+- role-specific value: include a proposed Data Residency model when data-geography obligations apply
 
 ## Confidence and Escalation Rules
 - 0.80-1.00: proceed normally

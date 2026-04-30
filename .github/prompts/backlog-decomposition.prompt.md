@@ -26,8 +26,13 @@ Use this prompt when requirements and context are ready to be decomposed into ex
 Require all fields:
 - `status`: completed | completed_with_notes | escalated | failed
 - `technical_artifact`
+- `retrieval_first_performed`: true | false
+- `context_version`
 - `confidence_score` and `confidence_rationale`
 - claim labels: FACT | INFERENCE | ASSUMPTION | UNCERTAIN
+- `positive_foundations`
+- `remediation_proposals`
+- `role_specific_value`
 - `open_issues` with blocking/non-blocking
 - `episodic_memory_entry`
 - `source_links` with freshness
@@ -41,6 +46,8 @@ Ensure the resulting artifact contains:
 - dependency mapping and sequencing constraints
 - prioritization rationale (value, dependency, risk)
 - refinement blockers and assumptions
+- positive foundations in current backlog structure
+- remediation proposals for decomposition and sequencing gaps
 
 ## Traceability Requirement
 Require explicit mapping:

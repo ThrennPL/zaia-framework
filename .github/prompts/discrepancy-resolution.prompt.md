@@ -15,8 +15,9 @@ Use this prompt when orchestrator detects conflict that can change synthesis out
 - revise
 - scope
 5. Require evidence-backed rationale from each participant.
-6. Synthesize one decision with explicit rationale.
-7. If unresolved after one round, escalate to user with structured options.
+6. Drive participants to produce at least one reconciled design option.
+7. Synthesize one decision with explicit rationale and implementation impact.
+8. If unresolved after one round, escalate to user with structured options.
 
 ## Mandatory Input Envelope
 For each participating subagent call include:
@@ -31,8 +32,13 @@ For each participating subagent call include:
 Require:
 - status
 - technical_artifact delta or addendum
+- retrieval_first_performed: true | false
+- context_version
 - confidence_score and confidence_rationale
 - claim labels (FACT | INFERENCE | ASSUMPTION | UNCERTAIN)
+- positive_foundations
+- remediation_proposals
+- role_specific_value
 - open_issues with blocking/non-blocking
 - episodic_memory_entry
 - source_links with freshness
@@ -42,6 +48,7 @@ Return:
 - conflict_summary
 - agent_positions
 - evidence_comparison
+- reconciled_design_options
 - orchestrator_decision
 - decision_rationale
 - unresolved_flag
@@ -49,6 +56,7 @@ Return:
 
 ## Constraints
 - Exactly one orchestrated discussion round before unresolved escalation.
+- Before escalation, include at least one option with trade-offs and implementation impact.
 - No direct subagent-user interaction.
 - No direct subagent MCP usage.
 - Do not suppress uncertainty in high-impact conflicts.

@@ -26,8 +26,13 @@ Use this prompt when the objective is to convert analytical context into impleme
 Require all fields:
 - `status`: completed | completed_with_notes | escalated | failed
 - `technical_artifact`
+- `retrieval_first_performed`: true | false
+- `context_version`
 - `confidence_score` and `confidence_rationale`
 - claim labels: FACT | INFERENCE | ASSUMPTION | UNCERTAIN
+- `positive_foundations`
+- `remediation_proposals`
+- `role_specific_value`
 - `open_issues` with blocking/non-blocking
 - `episodic_memory_entry`
 - `source_links` with freshness
@@ -41,6 +46,8 @@ Ensure the resulting artifact contains:
 - user stories in format: As a..., I want..., so that...
 - acceptance criteria in Given-When-Then
 - explicit business rules
+- positive foundations in already valid requirement statements
+- remediation proposals for testability and traceability gaps
 
 ## Quality Rules for Requirements
 - Requirements must be atomic, clear, and testable.

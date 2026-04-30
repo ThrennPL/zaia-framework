@@ -27,8 +27,13 @@ Use this prompt when process understanding, decision flow, exception handling, S
 Require all fields:
 - `status`: completed | completed_with_notes | escalated | failed
 - `technical_artifact`
+- `retrieval_first_performed`: true | false
+- `context_version`
 - `confidence_score` and `confidence_rationale`
 - claim labels: FACT | INFERENCE | ASSUMPTION | UNCERTAIN
+- `positive_foundations`
+- `remediation_proposals`
+- `role_specific_value`
 - `open_issues` with blocking/non-blocking
 - `episodic_memory_entry`
 - `source_links` with freshness
@@ -42,6 +47,8 @@ Ensure the resulting artifact contains:
 - SLA and operational constraints
 - bottlenecks/manual workarounds
 - model output in requested notation(s)
+- positive foundations that can be reused in TO-BE process design
+- remediation proposals for bottlenecks and exception handling
 
 ## Confidence and Escalation Rules
 - 0.80-1.00: proceed normally
@@ -65,3 +72,4 @@ Include explicit notes on:
 - No direct subagent MCP usage.
 - No implicit exception paths without explicit labeling.
 - Do not present inferred flow as FACT.
+- For architecture-impacting ambiguity, include Mermaid or PlantUML in output depending on diagram type, even when another notation is also provided.

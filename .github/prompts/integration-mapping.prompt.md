@@ -26,8 +26,13 @@ Use this prompt when cross-system interactions, interface contracts, event flows
 Require all fields:
 - `status`: completed | completed_with_notes | escalated | failed
 - `technical_artifact`
+- `retrieval_first_performed`: true | false
+- `context_version`
 - `confidence_score` and `confidence_rationale`
 - claim labels: FACT | INFERENCE | ASSUMPTION | UNCERTAIN
+- `positive_foundations`
+- `remediation_proposals`
+- `role_specific_value`
 - `open_issues` with blocking/non-blocking
 - `episodic_memory_entry`
 - `source_links` with freshness
@@ -39,6 +44,9 @@ Ensure the resulting artifact contains:
 - data and event flow sequencing
 - dependency graph and ownership boundaries
 - integration risk and operational constraint notes
+- at least one visual in Mermaid or PlantUML (for example Flowchart or Sequence Diagram) for key ambiguous or repair-required flows, chosen by diagram type
+- positive foundations that can be reused in target architecture
+- remediation proposals with implementation sequencing
 
 ## Confidence and Escalation Rules
 - 0.80-1.00: proceed normally
@@ -56,9 +64,11 @@ Include explicit notes on:
 - unresolved interface ambiguity
 - uncertain dependency assumptions
 - missing evidence affecting design confidence
+- design options that reduce ambiguity and improve delivery readiness
 
 ## Constraints
 - No direct subagent-user communication.
 - No direct subagent MCP usage.
 - Do not present inferred contracts as FACT.
 - Do not omit uncertainty in critical integration paths.
+- Do not return gap-only analysis without proposed integration remediation design.

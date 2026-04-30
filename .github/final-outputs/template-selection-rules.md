@@ -53,8 +53,31 @@ A selection result is valid only if:
 ## 8. Mandatory Baseline Sections (All Templates)
 1. Task context and scope
 2. Subagent contributions
-3. Discrepancies and outcome
-4. Orchestrator synthesis (FACT/INFERENCE/ASSUMPTION/UNCERTAIN)
-5. Recommendations and rationale
-6. Open issues and required decisions
-7. Source trail and identifiers
+3. Positive foundations
+4. Discrepancies and outcome
+5. Orchestrator synthesis (FACT/INFERENCE/ASSUMPTION/UNCERTAIN)
+6. Recommendations and rationale
+7. Open issues and required decisions
+8. Source trail and identifiers
+
+## 9. Mandatory Persistence and Filename Standard
+Every final orchestrator output must be persisted as a Markdown file (`.md`) in the workspace.
+
+Filename format:
+- `{task-topic-slug}-{TASK-ID}.md`
+
+Task-topic slug rules:
+- must be derived from the analyzed task topic/objective (not team or subagent names)
+- must be lowercase ASCII with dashes only
+- recommended length: 3-8 keywords
+- should keep distinctive business/domain terms for repository searchability
+
+Validation rules:
+1. extension is `.md`
+2. task-topic slug reflects the task objective/theme
+3. TASK-ID is present and valid
+4. filename contains only lowercase letters, numbers, and dashes besides the uppercase TASK-ID block
+
+Example valid names:
+- `voltreserve-hub-enterprise-governance-review-T-20260430-001.md`
+- `payments-data-residency-gap-analysis-T-20260430-002.md`

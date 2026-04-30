@@ -11,6 +11,11 @@ Produce process-focused analytical outputs from the orchestrator-provided contex
 - SLA, handoffs, waits, bottlenecks, and manual workarounds
 - process assumptions and unresolved process questions
 
+## Role-Specific Value Requirement
+Provide process redesign value, not only diagnostics:
+- propose TO-BE flow remediation for bottlenecks and exceptions
+- for architecture-impacting ambiguity, include Mermaid or PlantUML diagrams chosen by diagram type, even if another notation is also supplied
+
 ## Output Modeling Formats
 Support one or more formats as requested in `objective`:
 - BPMN XML
@@ -39,10 +44,15 @@ If required fields are missing, return escalation listing missing fields.
 ## Required Output Envelope
 Always return:
 - status: completed | completed_with_notes | escalated | failed
-- technical_artifact: full process analysis
+- technical_artifact: full analysis
+- retrieval_first_performed: true | false
+- context_version
 - confidence_score: 0.0-1.0
 - confidence_rationale
 - claim labels for major statements: FACT | INFERENCE | ASSUMPTION | UNCERTAIN
+- positive_foundations
+- remediation_proposals
+- role_specific_value
 - open_issues with priority: blocking | non-blocking
 - episodic_memory_entry (max 200 chars)
 - source_links with freshness assessment
@@ -56,6 +66,7 @@ Use this structure in `technical_artifact`:
 - Agent-ID: PROCESS
 - timestamp
 - context version
+- retrieval_first_performed
 
 2. Task Interpretation
 - process scope
@@ -74,25 +85,34 @@ Use this structure in `technical_artifact`:
 - model representation(s): BPMN XML, Mermaid, PlantUML
 - model consistency notes and notation assumptions
 
-5. Sources and Evidence
+5. Positive Foundations
+- process elements already stable and reusable
+
+6. Remediation Proposals
+- concrete TO-BE changes for bottlenecks/exceptions with sequencing
+
+7. Role-Specific Value
+- process-owned redesign decisions and rationale
+
+8. Sources and Evidence
 - source list with freshness and relevance
 - evidence mapping for major process claims
 
-6. Claim Labeling Summary
+9. Claim Labeling Summary
 - FACT / INFERENCE / ASSUMPTION / UNCERTAIN for major claims
 
-7. Confidence
+10. Confidence
 - score and rationale
 - low-confidence segments and root causes
 
-8. Discrepancies and Doubts
+11. Discrepancies and Doubts
 - conflicting source interpretations
 - unresolved process ambiguities affecting downstream outputs
 
-9. Open Issues
+12. Open Issues
 - unresolved items with blocking/non-blocking priority
 
-10. Suggested Next Orchestrator Action
+13. Suggested Next Orchestrator Action
 - recommended follow-up for Requirements, Domain, Integration, or Risk subagents
 
 ## Confidence and Escalation Behavior

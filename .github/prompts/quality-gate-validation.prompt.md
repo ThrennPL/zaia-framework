@@ -26,8 +26,13 @@ Use this prompt before publication to project repository, before stakeholder rev
 Require all fields:
 - `status`: completed | completed_with_notes | escalated | failed
 - `technical_artifact`
+- `retrieval_first_performed`: true | false
+- `context_version`
 - `confidence_score` and `confidence_rationale`
 - claim labels: FACT | INFERENCE | ASSUMPTION | UNCERTAIN
+- `positive_foundations`
+- `remediation_proposals`
+- `role_specific_value`
 - `open_issues` with blocking/non-blocking
 - `episodic_memory_entry`
 - `source_links` with freshness
@@ -40,6 +45,8 @@ Ensure the resulting artifact evaluates:
 - ambiguity and duplicate findings
 - logical gap detection
 - traceability completeness
+- positive foundations supporting readiness
+- remediation proposals with sequence and re-validation trigger
 
 ## Required Quality Outcome
 Require one explicit status:

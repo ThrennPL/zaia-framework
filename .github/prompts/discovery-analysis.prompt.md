@@ -26,8 +26,13 @@ Use this prompt when the request includes unclear scope, fragmented source mater
 Require all fields:
 - `status`: completed | completed_with_notes | escalated | failed
 - `technical_artifact`
+- `retrieval_first_performed`: true | false
+- `context_version`
 - `confidence_score` and `confidence_rationale`
 - claim labels: FACT | INFERENCE | ASSUMPTION | UNCERTAIN
+- `positive_foundations`
+- `remediation_proposals`
+- `role_specific_value`
 - `open_issues` with blocking/non-blocking
 - `episodic_memory_entry`
 - `source_links` with freshness
@@ -40,6 +45,8 @@ Ensure the resulting artifact contains:
 - open questions
 - information gaps
 - hypotheses and validation priorities
+- positive foundations reusable for next-stage design
+- remediation proposals for top-priority discovery gaps
 
 ## Confidence and Escalation Rules
 - 0.80-1.00: proceed normally

@@ -26,8 +26,13 @@ Use this prompt when historical context, repository hygiene, and reuse opportuni
 Require all fields:
 - `status`: completed | completed_with_notes | escalated | failed
 - `technical_artifact`
+- `retrieval_first_performed`: true | false
+- `context_version`
 - `confidence_score` and `confidence_rationale`
 - claim labels: FACT | INFERENCE | ASSUMPTION | UNCERTAIN
+- `positive_foundations`
+- `remediation_proposals`
+- `role_specific_value`
 - `open_issues` with blocking/non-blocking
 - `episodic_memory_entry`
 - `source_links` with freshness
@@ -39,6 +44,8 @@ Ensure the resulting artifact contains:
 - stale or weak-source warnings
 - artifact-level reuse recommendations
 - repository hygiene observations and retrieval friction points
+- positive foundations in reusable repository assets
+- remediation proposals for retrieval/reuse governance
 
 ## Confidence and Escalation Rules
 - 0.80-1.00: proceed normally
