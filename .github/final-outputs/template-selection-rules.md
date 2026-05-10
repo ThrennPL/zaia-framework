@@ -18,10 +18,17 @@ Required inputs:
 ## 3. Task-Type Mapping
 Use this default mapping:
 - discovery or problem-framing tasks -> Discovery Outcome Report
+- requirements-only clarification tasks -> Discovery Outcome Report with requirements addendum
 - architecture/design-option tasks -> Design Decision Pack
 - readiness/refinement/release-prep tasks -> Delivery Readiness Pack
 - regulated-risk/compliance-heavy tasks -> Risk and Compliance Decision Pack
 - leadership-update tasks -> Executive Summary for Stakeholders
+
+If a task spans multiple scenarios, select the template by dominant decision risk:
+- compliance/control risk dominates -> Risk and Compliance Decision Pack
+- architecture trade-off dominates -> Design Decision Pack
+- release/go-no-go dominates -> Delivery Readiness Pack
+- ambiguity-discovery dominates -> Discovery Outcome Report
 
 ## 4. Escalation-Sensitive Overrides
 Override default mapping when:

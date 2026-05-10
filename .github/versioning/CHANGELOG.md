@@ -1,6 +1,37 @@
-# ZAIA Environment Changelog
+﻿# ZAIA Environment Changelog
 
 All notable changes to ZAIA orchestration assets are documented in this file.
+
+## 1.6.0 - 2026-05-10
+### Metadata
+- author: environment owner
+- rationale: split reusable contracts/policies from role documents and reduce duplicated policy blocks
+- regression-test-reference: .github/tests/agent-contract-tests.md and .github/tests/orchestration_contract_validator.py
+
+### Added
+- Shared contract modules:
+  - .github/contracts/subagent-input-envelope.md
+  - .github/contracts/subagent-output-envelope.md
+  - .github/contracts/confidence-and-escalation.md
+  - .github/contracts/discrepancy-protocol.md
+- Shared governance policies:
+  - .github/policies/model-routing-policy.md
+  - .github/policies/single-agent-exception-policy.md
+- Instruction overlays for runtime routing:
+  - .github/instructions/orchestrator-routing.instructions.md
+  - .github/instructions/simple-queries.instructions.md
+  - .github/instructions/agent-model-routing.instructions.md
+
+### Updated
+- .github/agents/*.md (except orchestrator): replaced repeated generic sections with references to shared contracts.
+- Selected prompt files moved to shared contract references:
+  - .github/prompts/orchestrate-full-analysis.prompt.md
+  - .github/prompts/discovery-analysis.prompt.md
+  - .github/prompts/integration-mapping.prompt.md
+- .github/tests/agent-contract-tests.md: added CT-011 and CT-012 for shared-reference and version-tag validation.
+
+### Notes
+- Orchestration artifact validator still reports known historical issues in legacy analysis documents under Documents/Analysis; these are baseline findings and not introduced by this release.
 
 ## 1.5.0 - 2026-04-30
 ### Metadata
@@ -111,3 +142,5 @@ All notable changes to ZAIA orchestration assets are documented in this file.
 
 ### Known Follow-up
 - superseded by versions 1.1.0 and 1.2.0.
+
+

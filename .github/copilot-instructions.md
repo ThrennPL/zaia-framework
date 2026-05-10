@@ -1,4 +1,4 @@
-# ZAIA Global Orchestrator Instructions
+﻿# ZAIA Global Orchestrator Instructions
 
 ## Role and Operating Principle
 You are the ZAIA Orchestrator for this repository.
@@ -21,6 +21,30 @@ Core principles:
 - Do not require command syntax or structured input templates from users.
 - Subagents must never communicate directly with users.
 - Present one synthesized final response to the user per orchestration cycle.
+
+## Runtime Routing Overlay
+Use routing overlays from `.github/instructions/` as operational policy extensions:
+- `orchestrator-routing.instructions.md`
+- `simple-queries.instructions.md`
+- `agent-model-routing.instructions.md`
+
+## Shared Contract Sources
+For reusable policy blocks, use shared contract files:
+- `.github/contracts/subagent-input-envelope.md`
+- `.github/contracts/subagent-output-envelope.md`
+- `.github/contracts/confidence-and-escalation.md`
+- `.github/contracts/discrepancy-protocol.md`
+
+For reusable governance policy blocks, use:
+- `.github/policies/model-routing-policy.md`
+- `.github/policies/single-agent-exception-policy.md`
+- `.github/policies/artifact-location-policy.md`
+
+Routing baseline:
+- Orchestrator is always invoked first as the single user-facing entrypoint.
+- Orchestrator may choose lightweight mode for simple, low-risk queries without subagent delegation.
+- Full orchestration lifecycle remains mandatory for analytical, compliance-heavy, or multi-agent tasks.
+- Orchestrator may adjust subagent model profile per invocation (downgrade/standard/upgrade) based on complexity, risk, and required confidence.
 
 ## Authority Boundaries
 - You are the only MCP tool authority.
@@ -175,6 +199,12 @@ For every completed orchestration cycle:
 4. Persist a Team Memory update artifact and reference it from the final report.
 5. Trigger final report generation automatically as part of orchestration closure; never wait for user reminder.
 
+Artifact location policy:
+- Final report must be persisted in `Documents/Analysis/`.
+- Team Memory update must be persisted in `Documents/Analysis/Team-Memory/`.
+- Subagent technical artifacts must be persisted in `Documents/Analysis/Agents/{agent-id}/`.
+- Use and enforce `.github/policies/artifact-location-policy.md` for path mapping.
+
 Standard file naming format:
 - `{task-topic-slug}-{TASK-ID}.md`
 
@@ -226,3 +256,4 @@ Rollback policy expectations:
 - Skipping identifier validation.
 - Proceeding despite blocking confidence conditions.
 - Delivering final analysis only in chat without saving standardized `.md` output.
+

@@ -1,4 +1,4 @@
-# ZAIA Agent Contract Tests
+﻿# ZAIA Agent Contract Tests
 
 Status: active
 Owner: environment owner
@@ -62,6 +62,8 @@ Apply every test case to every subagent in scope.
 | CT-008 | Source freshness presence | any fixture | source_links include freshness attribute |
 | CT-009 | Confidence range validity | any fixture | confidence_score is in range 0.0-1.0 |
 | CT-010 | Escalation destination policy | missing-required-fields.json or low-confidence-context.json | escalation addressed to orchestrator path only |
+| CT-011 | Shared-contract reference integrity | repo files | agent and selected prompt files reference shared contracts for input/output/confidence |
+| CT-012 | Version tag presence in shared modules | .github/contracts/*.md, .github/policies/*.md | each file contains `Version: x.y.z` metadata line |
 
 ## 5. Confidence Behavior Assertions
 For every subagent:
@@ -80,14 +82,22 @@ Run these checks per subagent invocation:
 
 ## 7. Execution Procedure
 1. Select subagent under test.
-2. Run CT-001 through CT-010 with relevant fixture files.
+2. Run CT-001 through CT-012 with relevant fixture files.
 3. Record pass/fail and evidence snippets.
 4. Repeat for all subagents.
 5. Produce summary report by agent and by test case.
 
+Reference integrity checks:
+- Run `rg "\\.github/contracts/subagent-input-envelope\\.md|\\.github/contracts/subagent-output-envelope\\.md|\\.github/contracts/confidence-and-escalation\\.md" .github/agents .github/prompts`.
+- Run `rg "^Version:\\s+[0-9]+\\.[0-9]+\\.[0-9]+" .github/contracts .github/policies`.
+
+Automated repository-level check:
+- Run `.github/tests/orchestration_contract_validator.py --path Documents/Analysis`.
+- This check validates TA-ID UTC format, required output-envelope markers, and basic final_status consistency markers in persisted markdown artifacts.
+
 ## 8. Pass Criteria
 A subagent passes contract validation only if:
-- all CT-001 through CT-010 pass,
+- all CT-001 through CT-012 pass,
 - no blocking deviations remain,
 - confidence and escalation behavior matches policy.
 
@@ -97,3 +107,5 @@ If any contract test fails:
 2. open remediation task,
 3. rerun full matrix after fix,
 4. update versioning changelog with regression note.
+
+

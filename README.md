@@ -1,4 +1,4 @@
-# ZAIA Framework
+﻿# ZAIA Framework
 
 ZAIA (Analytical Agents Team) is an enterprise-oriented GitHub Copilot Agent Mode framework for orchestrated business and system analysis.
 
@@ -83,6 +83,18 @@ Expected result:
 - .github/final-outputs/
   Final report templates, selection rules, and worked examples.
 
+- .github/policies/artifact-location-policy.md
+  Canonical persistence rules for final reports, team memory, and subagent artifacts.
+
+- Documents/Analysis/
+  Canonical location for final orchestrator reports.
+
+- Documents/Analysis/Team-Memory/
+  Canonical location for team memory update artifacts.
+
+- Documents/Analysis/Agents/
+  Canonical location for subagent technical artifacts by agent folder.
+
 ## Core Operating Principles
 - Orchestrator is the only user-facing agent.
 - Orchestrator is the only MCP tool authority.
@@ -101,7 +113,8 @@ Expected result:
 2. Ensure Agent Mode reads .github/copilot-instructions.md.
 3. Start from an orchestrator prompt in .github/prompts/.
 4. Select output template using .github/final-outputs/template-selection-rules.md.
-5. Validate output against the relevant gate in .github/quality-gates/.
+5. Persist artifacts to canonical locations defined in .github/policies/artifact-location-policy.md.
+6. Validate output against the relevant gate in .github/quality-gates/.
 
 Success check:
 - A generated report includes task context, findings, recommendations, open issues, and source trail.
@@ -242,8 +255,51 @@ Expected result:
 3. Invoke required subagents with strict envelopes.
 4. Validate confidence and resolve discrepancies.
 5. Produce final orchestrator synthesis.
-6. Validate with appropriate gate checklist.
-7. Store project artifacts using mandatory templates.
+6. Persist final report to Documents/Analysis/.
+7. Persist Team Memory update to Documents/Analysis/Team-Memory/.
+8. Persist subagent technical artifacts to Documents/Analysis/Agents/{agent-id}/.
+9. Validate with appropriate gate checklist.
+10. Store project artifacts using mandatory templates.
+
+## Artifact Persistence Standard
+Use .github/policies/artifact-location-policy.md as the source of truth.
+
+Mandatory locations:
+- final orchestrator report -> Documents/Analysis/
+- team memory update -> Documents/Analysis/Team-Memory/
+- subagent technical artifact -> Documents/Analysis/Agents/{agent-id}/
+
+Operational rule:
+- Persist artifacts directly to canonical paths during the orchestration cycle.
+- Do not rely on manual post-run file moves.
+
+## Run Completion Checklist
+Use this checklist before marking a run as completed:
+1. Final report is saved in `Documents/Analysis/`.
+2. Team Memory update is saved in `Documents/Analysis/Team-Memory/`.
+3. Subagent technical artifacts are saved in `Documents/Analysis/Agents/{agent-id}/`.
+4. Task audit summary is saved in `.github/audit/` with correct file references.
+5. Contract validator and E2E smoke test have been executed.
+
+## Validation Commands
+Run from repository root:
+
+```powershell
+d:/grzegorz/programowanie/zaia/.venv/Scripts/python.exe .github/tests/orchestration_contract_validator.py --path Documents/Analysis
+d:/grzegorz/programowanie/zaia/.venv/Scripts/python.exe .github/tests/zaia_e2e_smoke.py
+```
+
+## Expected vs Unexpected Failures
+Failure interpretation rule:
+1. Known historical baseline issues in `Documents/Analysis/` are allowed only when they match the known-baseline list used by `.github/tests/zaia_e2e_smoke.py`.
+2. Any new validator error outside that known-baseline set is treated as a regression.
+3. Regression must be fixed or explicitly escalated before task closure.
+
+## Artifact Naming Examples
+Use deterministic naming:
+1. Final report: `vrh-e-s2-multi-agent-gate-pilot-T-20260510-007.md`
+2. Team memory update: `team-memory-update-T-20260510-007.md`
+3. Agent technical artifact: `vrh-e-s2-compliance-heavy-risk-pack-T-20260510-007.md`
 
 ## Commit Strategy
 Recommended approach:
@@ -271,3 +327,4 @@ Planned next:
 ## License
 This repository includes a license file:
 - LICENSE
+

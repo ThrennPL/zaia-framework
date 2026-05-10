@@ -52,6 +52,9 @@ Required event families per TASK-ID:
 ### 4.3 Subagent invocation
 - subagent_id
 - prompt_version
+- default_model_profile
+- selected_model_profile
+- override_reason (required if selected differs from default)
 - input_envelope_validation (pass | fail)
 - output_envelope_validation (pass | fail)
 - confidence_score

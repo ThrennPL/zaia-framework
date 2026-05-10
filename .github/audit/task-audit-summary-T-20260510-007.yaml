@@ -1,0 +1,60 @@
+﻿schema_version: 1.0
+summary_type: task_audit_summary
+
+task_id: T-20260510-007
+date_utc: 2026-05-10
+orchestrator_id: orchestrator
+
+scenario_labels:
+  - S2
+
+subagent_invocations:
+  total_count: 2
+  model_profiles:
+    default_by_agent:
+      risk-compliance: deep
+      quality: deep
+    selected_by_agent:
+      risk-compliance: deep
+      quality: deep
+    override_reasons: {}
+  by_agent:
+    discovery: 0
+    requirements: 0
+    domain: 0
+    integration: 0
+    process: 0
+    backlog: 0
+    nfr: 0
+    risk-compliance: 1
+    quality: 1
+    knowledge-repository: 0
+
+mcp_calls:
+  total_count: 0
+  by_tool: {}
+
+discrepancies:
+  detected_count: 0
+  rounds_executed: 0
+  unresolved_count: 0
+
+escalations:
+  total_count: 0
+  blocking_count: 0
+  non_blocking_count: 0
+
+envelope_validation:
+  input_envelope_failures: 0
+  output_envelope_failures: 0
+
+closure:
+  final_status: completed
+  final_report_file: Documents/Analysis/vrh-e-s2-multi-agent-gate-pilot-T-20260510-007.md
+  team_memory_file: Documents/Analysis/Team-Memory/team-memory-update-T-20260510-007.md
+  final_confidence_score: 0.92
+
+notes:
+  - Multi-agent S2 pilot executed with risk-compliance and quality.
+  - Process passed end-to-end; gate outcome fail due to project blockers.
+

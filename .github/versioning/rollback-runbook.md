@@ -46,12 +46,21 @@ Every rollback entry must include:
 - contract test result reference
 - timestamp
 
+## 4.1 Shared contracts and policies rollback scope
+When rollback impacts `.github/contracts/` or `.github/policies/`:
+1. restore shared module files and all dependent references in `.github/agents/` and selected `.github/prompts/`,
+2. verify reference integrity using `rg` checks from `.github/tests/agent-contract-tests.md`,
+3. verify `Version: x.y.z` metadata is present in each restored shared module,
+4. rerun contract and orchestration validators before release re-enable.
+
 ## 5. Verification Checklist Post-Rollback
 1. Input/output envelope constraints still hold.
 2. Confidence threshold behavior still holds.
 3. Escalation path remains orchestrator-only.
 4. Mandatory final report sections remain enforced.
 5. MCP access boundary remains orchestrator-only.
+6. Shared contract references in agent/prompt files resolve correctly.
+7. Version tags exist for all files in `.github/contracts/` and `.github/policies/`.
 
 ## 6. Stop Conditions
 Do not finalize rollback if:

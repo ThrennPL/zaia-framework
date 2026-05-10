@@ -14,28 +14,11 @@ Use this prompt when cross-system interactions, interface contracts, event flows
 5. Apply confidence and escalation policy.
 6. Return synthesized integration handover package for downstream validation.
 
-## Mandatory Input Envelope for Integration Subagent
-- `task_id`
-- `objective`
-- `working_context`
-- `permissions_scope`
-- `data_classification`
-- `required_confidence_threshold`
-
-## Mandatory Output Envelope Validation
-Require all fields:
-- `status`: completed | completed_with_notes | escalated | failed
-- `technical_artifact`
-- `retrieval_first_performed`: true | false
-- `context_version`
-- `confidence_score` and `confidence_rationale`
-- claim labels: FACT | INFERENCE | ASSUMPTION | UNCERTAIN
-- `positive_foundations`
-- `remediation_proposals`
-- `role_specific_value`
-- `open_issues` with blocking/non-blocking
-- `episodic_memory_entry`
-- `source_links` with freshness
+## Shared Contract References
+Use shared contracts for reusable policy blocks:
+- Input envelope: `.github/contracts/subagent-input-envelope.md`
+- Output envelope: `.github/contracts/subagent-output-envelope.md`
+- Confidence and escalation: `.github/contracts/confidence-and-escalation.md`
 
 ## Required Integration Content
 Ensure the resulting artifact contains:
@@ -49,10 +32,8 @@ Ensure the resulting artifact contains:
 - remediation proposals with implementation sequencing
 
 ## Confidence and Escalation Rules
-- 0.80-1.00: proceed normally
-- 0.60-0.79: proceed with uncertainty annotations
-- 0.40-0.59: escalate with partial integration analysis and blockers
-- below 0.40: blocking escalation, stop downstream progression
+Use shared contract:
+- `.github/contracts/confidence-and-escalation.md`
 
 ## Output Handover Contract
 Produce a synthesized handover package for:

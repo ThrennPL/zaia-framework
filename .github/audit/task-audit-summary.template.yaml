@@ -1,0 +1,59 @@
+﻿# Minimal task-level runtime evidence for orchestration closure
+# Save as: .github/audit/task-audit-summary-{TASK-ID}.yaml
+
+schema_version: 1.0
+summary_type: task_audit_summary
+
+task_id: T-YYYYMMDD-NNN
+date_utc: YYYY-MM-DD
+orchestrator_id: orchestrator
+
+scenario_labels:
+  - S1
+
+subagent_invocations:
+  total_count: 0
+  model_profiles:
+    default_by_agent: {}
+    selected_by_agent: {}
+    override_reasons: {}
+  by_agent:
+    discovery: 0
+    requirements: 0
+    domain: 0
+    integration: 0
+    process: 0
+    backlog: 0
+    nfr: 0
+    risk-compliance: 0
+    quality: 0
+    knowledge-repository: 0
+
+mcp_calls:
+  total_count: 0
+  by_tool: {}
+
+discrepancies:
+  detected_count: 0
+  rounds_executed: 0
+  unresolved_count: 0
+
+escalations:
+  total_count: 0
+  blocking_count: 0
+  non_blocking_count: 0
+
+envelope_validation:
+  input_envelope_failures: 0
+  output_envelope_failures: 0
+
+closure:
+  final_status: completed
+  final_report_file: Documents/Analysis/task-topic-T-YYYYMMDD-NNN.md
+  team_memory_file: Documents/Analysis/Team-Memory/team-memory-update-T-YYYYMMDD-NNN.md
+  final_confidence_score: 0.80
+
+notes:
+  - Keep content safe-to-log only.
+  - Do not place secrets or raw credentials in this summary.
+
