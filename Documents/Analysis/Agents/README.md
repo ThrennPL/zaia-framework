@@ -28,4 +28,5 @@ Cel: oddzielic artefakty operacyjne pracy agentow od konfiguracji w .github.
 
 Powiazanie polityki:
 - .github/policies/artifact-location-policy.md
+- .github/policies/evidence-pack-hardening-policy.md (dla taskow modyfikujacych evidence_pack)
 

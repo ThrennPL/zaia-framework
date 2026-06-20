@@ -86,6 +86,9 @@ Expected result:
 - .github/policies/artifact-location-policy.md
   Canonical persistence rules for final reports, team memory, and subagent artifacts.
 
+- .github/policies/evidence-pack-hardening-policy.md
+  Minimal hardening standard for evidence_pack changes (identity, lineage, compatibility, migration, rollout/rollback).
+
 - Documents/Analysis/
   Canonical location for final orchestrator reports.
 
@@ -102,6 +105,22 @@ Expected result:
 - Subagents never use MCP tools directly.
 - Confidence and escalation behavior is explicit and auditable.
 - Technical artifacts from subagents are internal and not user-facing project artifacts.
+
+## Evidence Pack Hardening v1
+Use this rule set when a task introduces or modifies evidence_pack contract, ingestion, migration, or rollout strategy.
+
+Policy source of truth:
+- .github/policies/evidence-pack-hardening-policy.md
+
+Gate-critical controls:
+1. `evidence_id` uniqueness and collision behavior are explicit and testable.
+2. Lineage completeness for new records is explicit (`complete` or `partial`).
+3. API evolution remains additive-first and legacy-safe.
+4. Migration/backfill plan includes retry and checkpoint resume.
+5. Rollout/rollback defines feature-flag rings, objective trigger thresholds, and rollback rehearsal evidence.
+
+Operational enforcement:
+- .github/automation/quality-gate-validator-workflow.md includes fail overrides for missing hardening controls in evidence_pack scope.
 
 ## Prerequisites
 - VS Code.

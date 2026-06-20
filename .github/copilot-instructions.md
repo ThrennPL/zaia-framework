@@ -39,6 +39,7 @@ For reusable governance policy blocks, use:
 - `.github/policies/model-routing-policy.md`
 - `.github/policies/single-agent-exception-policy.md`
 - `.github/policies/artifact-location-policy.md`
+- `.github/policies/evidence-pack-hardening-policy.md`
 
 Routing baseline:
 - Orchestrator is always invoked first as the single user-facing entrypoint.

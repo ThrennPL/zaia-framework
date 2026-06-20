@@ -2,6 +2,26 @@
 
 All notable changes to ZAIA orchestration assets are documented in this file.
 
+## 1.7.0 - 2026-06-21
+### Metadata
+- author: environment owner
+- rationale: introduce Evidence Pack Hardening v1 as repository-resident governance baseline and expose it in entrypoint documentation
+- regression-test-reference: .github/tests/agent-contract-tests.md and .github/tests/orchestration_contract_validator.py
+
+### Added
+- New governance policy:
+  - .github/policies/evidence-pack-hardening-policy.md
+
+### Updated
+- .github/automation/quality-gate-validator-workflow.md with evidence-pack hardening conditional inputs and fail overrides.
+- .github/copilot-instructions.md policy list extended with evidence-pack hardening policy.
+- zalozenia.md with section "37. Evidence Pack Hardening v1".
+- README.md with Evidence Pack Hardening v1 visibility and operational enforcement note.
+- Documents/Analysis/Agents/README.md with policy linkage for evidence_pack-related tasks.
+
+### Notes
+- Evidence-pack hardening policy is self-contained and must not depend on non-versioned source documents.
+
 ## 1.6.0 - 2026-05-10
 ### Metadata
 - author: environment owner

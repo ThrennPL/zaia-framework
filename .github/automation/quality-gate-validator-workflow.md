@@ -22,6 +22,11 @@ Required:
 - evidence package references
 - linked artifact IDs
 
+Conditional required (for evidence-pack domain changes):
+- evidence_id contract references
+- lineage contract references
+- rollback rehearsal evidence (feature flags and measured timings)
+
 Optional:
 - waiver notes
 - prior gate results
@@ -40,6 +45,11 @@ Optional:
 - pass_with_notes: no blocking findings, non-blocking findings remain.
 - fail: at least one blocking finding or critical evidence missing.
 
+Evidence-pack hardening override:
+- fail if evidence-pack change has no explicit evidence_id uniqueness rule.
+- fail if evidence-pack change has no lineage completeness definition for new records.
+- fail if evidence-pack change has no rollback trigger thresholds and rehearsal evidence.
+
 ## 6. Output Contract
 - validation_status: pass | pass_with_notes | fail
 - gate_stage
@@ -52,4 +62,5 @@ Optional:
 ## 7. Guardrails
 - no gate can be marked pass if blocking findings exist,
 - unresolved critical placeholder blocks Gate 0,
-- all output decisions must reference evidence IDs.
+- all output decisions must reference evidence IDs,
+- for evidence-pack scope, references must include policy `.github/policies/evidence-pack-hardening-policy.md`.
